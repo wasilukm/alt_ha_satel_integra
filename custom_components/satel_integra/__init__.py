@@ -2,7 +2,7 @@
 import collections
 import logging
 
-from satel_integra.satel_integra import AsyncSatel
+from satel_integra2.satel_integra import AsyncSatel
 import voluptuous as vol
 
 from homeassistant.const import CONF_HOST, CONF_PORT, EVENT_HOMEASSISTANT_STOP, Platform
@@ -32,6 +32,7 @@ CONF_ZONE_TYPE = "type"
 CONF_ZONES = "zones"
 CONF_OUTPUTS = "outputs"
 CONF_SWITCHABLE_OUTPUTS = "switchable_outputs"
+CONF_INTEGRATION_KEY = "integration_key"
 
 ZONES = "zones"
 
@@ -83,6 +84,7 @@ CONFIG_SCHEMA = vol.Schema(
                 vol.Optional(CONF_SWITCHABLE_OUTPUTS, default={}): {
                     vol.Coerce(int): EDITABLE_OUTPUT_SCHEMA
                 },
+                vol.Optional(CONF_INTEGRATION_KEY, default=''): cv.string,
             },
             is_alarm_code_necessary,
         )
@@ -101,12 +103,14 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     host = conf.get(CONF_HOST)
     port = conf.get(CONF_PORT)
     partitions = conf.get(CONF_DEVICE_PARTITIONS)
+    integration_key = conf.get(CONF_INTEGRATION_KEY)
 
     monitored_outputs = collections.OrderedDict(
         list(outputs.items()) + list(switchable_outputs.items())
     )
 
-    controller = AsyncSatel(host, port, hass.loop, zones, monitored_outputs, partitions)
+    controller = AsyncSatel(
+        host, port, hass.loop, zones, monitored_outputs, partitions, integration_key)
 
     hass.data[DATA_SATEL] = controller
 
