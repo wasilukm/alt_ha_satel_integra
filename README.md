@@ -33,7 +33,7 @@ For the Binary Sensor check the [type/class](https://www.home-assistant.io/integ
 ### Installation with HACS
 
  - add the repository to the [HACS custom repositories](https://hacs.xyz/docs/faq/custom_repositories)
- - in HACS look for Alternative Satel Integra and install the integration
+ - in HACS look for Satel Integra and install the integration
  - update `configuration.yaml` (see below)
  - restart Home Assistant
 
