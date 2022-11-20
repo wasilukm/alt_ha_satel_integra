@@ -1,3 +1,5 @@
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
+
 # Alternative Satel Integra
 
 The integration is based on build in Home Assistant [Satel Integra integration](https://www.home-assistant.io/integrations/satel_integra/).
@@ -32,6 +34,7 @@ For the Binary Sensor check the [type/class](https://www.home-assistant.io/integ
 
  - add the repository to the [HACS custom repositories](https://hacs.xyz/docs/faq/custom_repositories)
  - in HACS look for Alternative Satel Integra and install the integration
+ - update `configuration.yaml` (see below)
  - restart Home Assistant
 
 ### Removal
@@ -43,7 +46,7 @@ will start working. To avoid this, remove `satel_integra` entries from `configur
 
 ## Configuration
 
-The configuration is compatible with the original `Satel Integra`. Therefore, migration to `Alternative Satel Integra`
+The configuration is compatible with the original [Satel Integra](https://www.home-assistant.io/integrations/satel_integra/). Therefore, migration to `Alternative Satel Integra`
 doesn't require any modifications unless a user wants to use new features.
 
 A `satel_integra` section must be present in the `configuration.yaml` file:
