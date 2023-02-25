@@ -1,11 +1,11 @@
 {
   "domain": "satel_integra",
   "name": "Alternative Satel Integra",
-  "documentation": "https://www.home-assistant.io/integrations/satel_integra",
-  "requirements": ["satel_integra2==0.4.2"],
   "codeowners": [],
+  "documentation": "https://www.home-assistant.io/integrations/satel_integra",
   "iot_class": "local_push",
+  "issue_tracker": "https://github.com/wasilukm/alt_ha_satel_integra/issues",
   "loggers": ["satel_integra"],
-  "version": "0",
-  "issue_tracker": "https://github.com/wasilukm/alt_ha_satel_integra/issues"
+  "requirements": ["satel_integra2==0.4.2"],
+  "version": "0"
 }
