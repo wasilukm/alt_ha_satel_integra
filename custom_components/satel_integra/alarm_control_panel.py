@@ -7,7 +7,6 @@ import logging
 
 from satel_integra2.satel_integra import AlarmState
 
-import homeassistant.components.alarm_control_panel as alarm
 from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntity,
     AlarmControlPanelEntityFeature,
